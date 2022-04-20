@@ -84,6 +84,7 @@ void rotateQueue(Queue* q);
 /// <param name="s"></param>
 void cutAndReplace(Queue* q);
 
+void printQueue(Queue* q);
 /// <summary>
 /// 
 /// </summary>
