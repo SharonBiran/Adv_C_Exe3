@@ -7,7 +7,7 @@ void stack();
 void queue();
 void main()
 {
-	stack();
+	queue();
 }
 
 void stack()
@@ -21,13 +21,19 @@ void stack()
 	push(ptrs, 10);
 	push(ptrs, 7);
 	push(ptrs, 5);
-	printf("the stack is/not palindrome %d", isPalindrome(ptrs));
+	printf("the stack is/not palindrome if 1/0: %d\n", isPalindrome(ptrs));
 	rotateStack(ptrs, 5);
 	printf("after the rotate function: ");
-	display(ptrs);
+	print(ptrs);
 	char* sentence = "remem#reb# thi#carp s#tice";
+	printf("after the flip between hashes function: \n");
 	flipBetweenHashes(sentence);
-	
+	print(ptrs);
+	pop(ptrs);
+	pop(ptrs);
+	printf("after pop: \n");
+	print(ptrs);
+	destroyStack(ptrs);
 }
 
 void queue()
@@ -40,6 +46,17 @@ void queue()
 	enqueue(&q1, 3);
 	enqueue(&q1, 1);
 	enqueue(&q1, 9);
+	rotateQueue(&q1);
+	printf("after the rotate function:\n ");
+	printQueue(&q1);
+	printf("after the cut and replace function: \n");
 	cutAndReplace(&q1);
 	printQueue(&q1);
+	sortKidsFirst(&q1);
+	printf("after the sort kids first function: \n");
+	dequeue(&q1);
+	dequeue(&q1);
+	printf("after dequeue: \n");
+	printQueue(&q1);
+	destroyQueue(&q1);
 }

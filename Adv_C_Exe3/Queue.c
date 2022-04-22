@@ -48,7 +48,13 @@ void enqueue(Queue* q, unsigned int data)
 
 unsigned int dequeue(Queue* q)
 {
-	// add your code here
+	int temp = q->head->data;
+	intNode* p = q->head;
+	q->head = q->head->next;
+	if (q->head == NULL) //if queue gets empty
+		q->tail = NULL;//both front and rear NULL
+	free(p);
+	return temp;
 }
 
 int isEmptyQueue(const Queue* q)
@@ -60,7 +66,16 @@ int isEmptyQueue(const Queue* q)
 
 void rotateQueue(Queue* q)
 {
-	// add your code here
+	Queue* tmp;
+	initQueue(tmp);
+	while (q->head->next != NULL)
+	{
+		enqueue(tmp, dequeue(q));
+	}
+	while (tmp->head != NULL)
+	{
+		enqueue(q, dequeue(tmp));
+	}
 }
 
 void cutAndReplace(Queue* q)
