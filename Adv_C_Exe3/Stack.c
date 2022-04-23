@@ -143,7 +143,7 @@ void rotateStack(Stack* s, int n)
 	
 	
 }
-void print(charNode* head)
+void printStack(charNode* head)
 {
 	charNode* tmp;
 	tmp = head;

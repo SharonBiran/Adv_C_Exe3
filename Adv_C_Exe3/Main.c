@@ -7,7 +7,7 @@ void stack();
 void queue();
 void main()
 {
-	queue();
+	stack();
 }
 
 void stack()
@@ -41,11 +41,13 @@ void queue()
 	Queue q1;
 	initQueue(&q1);
 	enqueue(&q1, 6);
+	printQueue(&q1);
 	enqueue(&q1, 5);
 	enqueue(&q1, 2);
 	enqueue(&q1, 3);
 	enqueue(&q1, 1);
 	enqueue(&q1, 9);
+	printQueue(&q1);
 	rotateQueue(&q1);
 	printf("after the rotate function:\n ");
 	printQueue(&q1);

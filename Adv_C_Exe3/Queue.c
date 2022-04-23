@@ -66,22 +66,18 @@ int isEmptyQueue(const Queue* q)
 
 void rotateQueue(Queue* q)
 {
-	Queue* tmp;
-	initQueue(tmp);
-	while (q->head->next != NULL)
-	{
-		enqueue(tmp, dequeue(q));
-	}
-	while (tmp->head != NULL)
-	{
-		enqueue(q, dequeue(tmp));
-	}
+	q->head->next = q->tail;
+	intNode* temp;
+	temp = q->tail;
+	q->tail = q->tail->next;
+	temp->next = NULL;
+	q->head = temp;
+
 }
 
 void cutAndReplace(Queue* q)
 {
 	intNode *node, * node1, * node2, *temp;
-	Queue* tempQ;
 	int count, sum = 0, ave;
 	if (isEmptyQueue(q))
 	{
